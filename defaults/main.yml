@@ -1,0 +1,25 @@
+---
+elasticsearch_apt_repository_key_url: https://artifacts.elastic.co/GPG-KEY-elasticsearch
+elasticsearch_apt_repository_url: https://artifacts.elastic.co/packages/7.x/apt
+elasticsearch_etc_path: /etc/elasticsearch
+
+# Network hosts (Elasticsearch will listen on these hosts)
+elasticsearch_network_hosts:
+  - 127.0.0.1
+
+# HTTP port
+elasticsearch_http_port: 9200
+
+# Cluster name
+elasticsearch_cluster_name: "{{ ansible_hostname }}"
+
+# Node name
+elasticsearch_node_name: "{{ ansible_hostname }}"
+
+# Seed hosts
+elasticsearch_seed_hosts:
+  - "{{ ansible_hostname }}"
+
+# Initial master nodes
+elasticsearch_initial_master_nodes:
+  - "{{ ansible_hostname }}"

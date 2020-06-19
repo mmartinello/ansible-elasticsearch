@@ -1,0 +1,22 @@
+# {{ ansible_managed }}
+
+cluster.name: {{ elasticsearch_cluster_name }}
+node.name: {{ elasticsearch_node_name }}
+
+# Path to directory where to store the data (separate multiple locations by comma):
+path.data: /var/lib/elasticsearch
+
+# Path to log files:
+path.logs: /var/log/elasticsearch
+
+# Set the bind address to a specific IP (IPv4 or IPv6):
+network.host: [{% for host in elasticsearch_network_hosts %}'{{ host }}'{{ ", " if not loop.last else "" }}{% endfor %}]
+
+# Set a custom port for HTTP:
+http.port: {{ elasticsearch_http_port }}
+
+# Pass an initial list of hosts to perform discovery when this node is started:
+discovery.seed_hosts: [{% for host in elasticsearch_seed_hosts %}'{{ host }}'{{ ", " if not loop.last else "" }}{% endfor %}]
+
+# Bootstrap the cluster using an initial set of master-eligible nodes:
+cluster.initial_master_nodes: [{% for host in elasticsearch_initial_master_nodes %}'{{ host }}'{{ ", " if not loop.last else "" }}{% endfor %}]
