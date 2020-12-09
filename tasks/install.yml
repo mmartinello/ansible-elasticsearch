@@ -1,3 +1,9 @@
 ---
 - include_tasks: install-Debian.yml
   when: ansible_os_family in ["Debian", "Ubuntu"]
+
+- name: Ensure that Elasticsearch data directory is owned by Elasticsearch
+  file:
+    path: "{{ elasticsearch_data_dir_path }}"
+    owner: "{{ elasticsearch_user }}"
+    group: "{{ elasticsearch_group }}"

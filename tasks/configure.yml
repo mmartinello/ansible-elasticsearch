@@ -2,5 +2,5 @@
 - name: Configure elasticsearch.yml file
   template:
     src: elasticsearch.yml.j2
-    dest: "{{ elasticsearch_etc_path }}/elasticsearch.yml"
+    dest: "{{ elasticsearch_etc_dir_path }}/elasticsearch.yml"
   notify: Restart Elasticsearch
