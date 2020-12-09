@@ -3,8 +3,8 @@ elasticsearch_apt_repository_key_url: https://artifacts.elastic.co/GPG-KEY-elast
 elasticsearch_apt_repository_url: https://artifacts.elastic.co/packages/7.x/apt
 elasticsearch_etc_dir_path: /etc/elasticsearch
 elasticsearch_data_dir_path: /var/lib/elasticsearch
-elasticsearc_user: elasticsearch
-elasticsearc_group: elasticsearch
+elasticsearch_user: elasticsearch
+elasticsearch_group: elasticsearch
 
 # Network hosts (Elasticsearch will listen on these hosts)
 elasticsearch_network_hosts:
