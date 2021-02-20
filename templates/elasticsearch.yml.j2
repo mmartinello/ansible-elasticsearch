@@ -20,3 +20,7 @@ discovery.seed_hosts: [{% for host in elasticsearch_seed_hosts %}'{{ host }}'{{ 
 
 # Bootstrap the cluster using an initial set of master-eligible nodes:
 cluster.initial_master_nodes: [{% for host in elasticsearch_initial_master_nodes %}'{{ host }}'{{ ", " if not loop.last else "" }}{% endfor %}]
+
+{% if elasticsearch_enable_basic_xpack_license %}
+xpack.license.self_generated.type: basic
+{% endif %}

@@ -26,3 +26,6 @@ elasticsearch_seed_hosts:
 # Initial master nodes
 elasticsearch_initial_master_nodes:
   - "{{ ansible_hostname }}"
+
+# Enable Basic XPack License
+elasticsearch_enable_basic_xpack_license: false
