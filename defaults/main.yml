@@ -1,10 +1,20 @@
 ---
+# Elastic APT repository URL and key
 elasticsearch_apt_repository_key_url: https://artifacts.elastic.co/GPG-KEY-elasticsearch
 elasticsearch_apt_repository_url: https://artifacts.elastic.co/packages/7.x/apt
+
+# Configuration directory path
 elasticsearch_etc_dir_path: /etc/elasticsearch
+
+# Data directory path
 elasticsearch_data_dir_path: /var/lib/elasticsearch
+
+# Running system user and group
 elasticsearch_user: elasticsearch
 elasticsearch_group: elasticsearch
+
+# Enable and start Elasticsearch service at startup
+elasticsearch_service_enabled: true
 
 # Network hosts (Elasticsearch will listen on these hosts)
 elasticsearch_network_hosts:
