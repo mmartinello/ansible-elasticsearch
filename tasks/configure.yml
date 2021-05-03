@@ -7,7 +7,7 @@
 
 - name: Configure JVM heap size
   template:
-    path: heap-size.j2
+    src: heap-size.j2
     dest: /etc/elasticsearch/jvm.options.d/heap-size
     owner: root
     group: elasticsearch
