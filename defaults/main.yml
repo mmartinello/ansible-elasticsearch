@@ -20,8 +20,15 @@ elasticsearch_service_enabled: true
 elasticsearch_network_hosts:
   - 127.0.0.1
 
+# Bind hosts
+elasticsearch_bind_host:
+  - 127.0.0.1
+
 # HTTP port
 elasticsearch_http_port: 9200
+
+# Transport port
+elasticsearch_transport_port: 9301
 
 # Cluster name
 elasticsearch_cluster_name: "{{ ansible_hostname }}"
@@ -36,6 +43,18 @@ elasticsearch_seed_hosts:
 # Initial master nodes
 elasticsearch_initial_master_nodes:
   - "{{ ansible_hostname }}"
+
+# Data node
+elasticsearch_node_data: true
+
+# Dedicated master-eligible node
+elasticsearch_node_master: true
+
+# Memory lock
+elasticsearch_memory_lock: false
+
+# Automatic index creation
+elasticsearch_auto_create_index: true
 
 # Enable Basic XPack License
 elasticsearch_enable_basic_xpack_license: false
