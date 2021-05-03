@@ -4,3 +4,25 @@
     src: elasticsearch.yml.j2
     dest: "{{ elasticsearch_etc_dir_path }}/elasticsearch.yml"
   notify: Restart Elasticsearch
+
+- name: Configure JVM heap size (initial size)
+  lineinfile:
+    path: /etc/elasticsearch/jvm.options
+    regexp: "^#?\s*\-Xms"
+    line: "-Xms{{ elasticsearch_jvm_heap_size }}"
+    state: present
+    owner: root
+    group: elasticsearch
+    mode: 0660
+  notify: Restart Elasticsearch
+
+- name: Configure JVM heap size (maximum size)
+  lineinfile:
+    path: /etc/elasticsearch/jvm.options
+    regexp: "^#?\s*\-Xms"
+    line: "-Xmx{{ elasticsearch_jvm_heap_size }}"
+    state: present
+    owner: root
+    group: elasticsearch
+    mode: 0660
+  notify: Restart Elasticsearch

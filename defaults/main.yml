@@ -58,3 +58,6 @@ elasticsearch_auto_create_index: true
 
 # Enable Basic XPack License
 elasticsearch_enable_basic_xpack_license: false
+
+# JVM heap size
+elasticsearch_jvm_heap_size: 1g
